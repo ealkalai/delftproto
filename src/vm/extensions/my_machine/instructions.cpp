@@ -12,10 +12,30 @@
 // You should have received a copy of the GNU Lesser General Public License along
 // with DelftProto.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifdef Machine
-#include "machine.hpp"
-#endif
+#include <iostream>
 
-#ifdef INSTRUCTION
-#include "delftproto.instructions"
-#endif
+#include <machine.hpp>
+
+namespace Instructions {
+	
+	void HELLOWORLD(Machine & machine){
+		std::cout << "Hello World! (" << ++machine.helloworld_counter << ")" << std::endl;
+	}
+	
+	void COORD(Machine & machine){
+		std::cout << "Pos: " << machine.x<<"-"<<machine.y<<"-"<<machine.z<<std::endl;
+		Tuple coord(3);
+        coord.push(machine.x);
+        coord.push(machine.y);
+        coord.push(machine.z);
+        machine.stack.push(coord);
+	}
+	
+	void MOV(Machine & machine){
+		machine.x += Number(machine.nextInt8());
+		machine.y += Number(machine.nextInt8());
+		machine.z += Number(machine.nextInt8());
+	}
+	
+}
+

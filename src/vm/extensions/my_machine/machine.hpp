@@ -12,10 +12,13 @@
 // You should have received a copy of the GNU Lesser General Public License along
 // with DelftProto.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifdef Machine
-#include "machine.hpp"
-#endif
+#include <types.hpp>
 
-#ifdef INSTRUCTION
-#include "delftproto.instructions"
-#endif
+struct Example_Machine :  Machine {
+	Counter helloworld_counter;
+	Number x,y,z;
+	Example_Machine() : helloworld_counter(0),x(0),y(0),z(0) {}
+};
+
+#undef  Machine
+#define Machine Example_Machine

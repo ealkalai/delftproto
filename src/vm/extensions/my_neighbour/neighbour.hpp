@@ -12,10 +12,12 @@
 // You should have received a copy of the GNU Lesser General Public License along
 // with DelftProto.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifdef Machine
-#include "machine.hpp"
-#endif
+#include <types.hpp>
 
-#ifdef INSTRUCTION
-#include "delftproto.instructions"
-#endif
+struct My_Neighbour :  Neighbour {
+	Number x,y,z;
+    My_Neighbour(): x(0), y(0), z(0) {};
+};
+
+#undef  Neighbour
+#define Neighbour My_Neighbour

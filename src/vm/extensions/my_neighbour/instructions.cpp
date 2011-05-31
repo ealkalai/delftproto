@@ -12,10 +12,20 @@
 // You should have received a copy of the GNU Lesser General Public License along
 // with DelftProto.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifdef Machine
-#include "machine.hpp"
-#endif
+#include <iostream>
 
-#ifdef INSTRUCTION
-#include "delftproto.instructions"
-#endif
+#include <machine.hpp>
+#include <neighbour.hpp>
+
+namespace Instructions {
+	/*
+	void HELLOWORLD(Machine & machine){
+		std::cout << "Hello World! (" << ")" << std::endl;
+	}
+	*/
+	
+	void CHECK_NB(Machine & machine){
+		std::cout << "I have: "<<machine.hood.size() << std::endl;
+	}
+}
+

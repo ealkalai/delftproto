@@ -12,10 +12,12 @@
 // You should have received a copy of the GNU Lesser General Public License along
 // with DelftProto.  If not, see <http://www.gnu.org/licenses/>.
 
-#ifdef Machine
-#include "machine.hpp"
-#endif
+/// \file
+/// Provides the MachineId class.
 
-#ifdef INSTRUCTION
-#include "delftproto.instructions"
+#ifndef __MACHINEID_HPP
+#define __MACHINEID_HPP
+
+typedef unsigned int MachineId;
+
 #endif
