@@ -16,8 +16,8 @@
 
 struct Example_Machine :  Machine {
 	Counter helloworld_counter;
-	Number x,y,z;
-	Example_Machine() : helloworld_counter(0),x(0),y(0),z(0) {}
+	Number x,y,z,range;
+	Example_Machine() : helloworld_counter(0),x(0),y(0),z(0),range(50) {}
 };
 
 #undef  Machine

@@ -25,7 +25,18 @@ namespace Instructions {
 	*/
 	
 	void CHECK_NB(Machine & machine){
-		std::cout << "I have: "<<machine.hood.size() << std::endl;
+		std::cout << "I have "<<machine.hood.size() << " neighbours"<<std::endl;
 	}
+	
+	void SEND(Machine & machine){
+		int numOfData = machine.nextInt8();
+		Tuple data(numOfData);
+		for(int i=0;i<numOfData;i++)
+		{
+			data.push(machine.nextInt8());
+		}
+		
+		machine.stack.push(data);
+	}	
 }
 

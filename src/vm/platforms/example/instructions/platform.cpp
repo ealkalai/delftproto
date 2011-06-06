@@ -21,6 +21,7 @@ namespace Instructions {
 	
 	using namespace std;
 	
+	
 	void RED(Machine & machine){
 		// ...
 	}
