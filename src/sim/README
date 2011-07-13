@@ -1,0 +1,75 @@
+1. What is this?
+----------------
+This code is a simple simulator for the Delft Proto Virtual Machine, that uses the Omnet++ classes.
+You can load a specific script to the machine and run simulation through the Omnet++ IDE.
+
+2. Compilation
+---------------
+In order to compile the code you need to have already install both the Delft Proto and the Omnet++
+
+The Delft Proto can be found and installed via the following instructions:
+	cd /tmp
+	git clone git://github.com/delftproto/delftproto
+	cd delftproto/vm
+	./configure 
+	sudo make install
+	
+You can find the Omnet++ from the following link:
+	http://www.omnetpp.org/
+
+After installing everything successfully, just enter:
+	make
+	
+If no error appears you have installed the Delft Proto Simulator.
+
+3. Run
+------
+To run the simulator press:
+	./SimpleDelftSim
+
+The Omnet++ simulation environment will open and then you can react with the available options.
+Suggestion hit EXPRESS RUN (F7)
+
+To change any parameters just open the SimpleDelftSim.net file and make any changes you want.
+Change teh number of the Nodes
+	node[NUMBER_OF_NODES]: Vm{...}
+ 
+ 
+
+4. About The Code
+------------------
+Below it is a structure of files for the Simulator
+	instructions				: Directory with new instructions
+		plataform.cpp			: File that implements extra opCodes
+	Sim_Machine				: Directory of the extension of the VM
+		delftproto.instructions		: File with a list of the new instructions of the extension
+		extension.hpp			: File that states what parts of the original VM will be extended
+		instructions.cpp		: File with the implementatuin of the Opcodes of the extension
+		machine.hpp			: File with the machine extension
+		neighbour.hpp			: File with the Neighbour extension
+	Makefile				: Script for the compilation of the source code
+	script					: File that includes the Virtual machine script
+	SimpleDelftSim.ned			: Ned File for the network Description
+	extensions.hpp				: File that states the extenions of the Machine class
+	machineid.hpp				: File that Overrides the original machineid.hpp file
+	omnetpp.ini				: File with the network and running configuration
+	vm.cpp					: File with the implementation of the Simulator Virtual Machine node
+
+In order to integrate the virtual machine and the omnet++ a new extension was created. In the schema below you can see the model.
+---------		---------------
+|Machine|		|cSimpleModule|
+---------		---------------
+    |				|
+    |				|
+    -----------------------------
+    		|
+     	   -------------
+     	   |Sim_Machine|
+     	   -------------
+     	  
+And when you in use your code Machine is like having a virtual machine which includes all the extensions of the Machine and also it is cSimpleModule, so you can interact with Omnet++ classes.
+Each node in the omnet++ will be a Vm. The definition is in the vm.cpp file.
+
+
+
+
