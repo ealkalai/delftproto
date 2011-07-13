@@ -1,0 +1,87 @@
+// This file is part of DelftProto.
+// 
+// DelftProto is free software: you can redistribute it and/or modify it under
+// the terms of the GNU Lesser General Public License as published by the Free
+// Software Foundation, either version 3 of the License, or (at your option) any
+// later version.
+// 
+// DelftProto is distributed in the hope that it will be useful, but WITHOUT ANY
+// WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+// PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License along
+// with DelftProto.  If not, see <http://www.gnu.org/licenses/>.
+
+/// \file
+/// Here is the script of the VM. Write each opcode sequential separated by a comma.
+
+DEF_VM_OP, 1, 1, 0, 4, 1, 0, 19, 12,
+DEF_FUN_4_OP,
+	LIT_0_OP,
+	REF_3_OP,
+	RND_OP,
+	RET_OP,
+DEF_FUN_4_OP,
+	REF_1_OP,
+	REF_0_OP,
+	ADD_OP,
+	RET_OP,
+DEF_FUN_2_OP,
+	REF_0_OP,
+	RET_OP,
+DEF_FUN_OP,	58,
+	LIT8_OP, 15,
+	LIT8_OP, 5,
+	LIT8_OP, 5,
+	LIT_1_OP,
+	LET_4_OP,
+	GLO_REF_0_OP,
+	INIT_FEEDBACK_OP,
+	0,
+	LET_1_OP,
+	REF_0_OP,
+	REF_0_OP,
+	LIT_0_OP,
+	EQ_OP,
+	LET_1_OP,
+	REF_1_OP,
+	REF_OP,
+	4,
+	LT_OP,
+	LIT_0_OP,
+	REF_2_OP,
+	GLO_REF_1_OP,
+	GLO_REF_2_OP,
+	REF_0_OP,
+	FOLD_HOOD_PLUS_OP,
+	0,
+	MUL_OP,
+	MUX_OP,
+	LET_1_OP,
+	REF_2_OP,
+	DT_OP,
+	REF_0_OP,
+	ADD_OP,
+	ADD_OP,
+	LET_1_OP,
+	REF_0_OP,
+	REF_OP, 7,
+	GTE_OP,
+	LIT_0_OP,
+	REF_0_OP,
+	MUX_OP,
+	POP_LET_1_OP,
+	POP_LET_1_OP,
+	POP_LET_1_OP,
+	FEEDBACK_OP,
+	0,
+	LET_1_OP,
+	REF_0_OP,
+	REF_3_OP,
+	LT_OP,
+	GREEN_OP,
+	POP_LET_1_OP,
+	POP_LET_1_OP,
+	POP_LET_4_OP,
+	RET_OP,
+EXIT_OP

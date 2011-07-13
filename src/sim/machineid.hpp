@@ -31,7 +31,6 @@ class MachineId {
 	
 	public:
 		unsigned int id;
-		struct Neighbour *thisMachine;
 		
 		bool operator == (MachineId const & m) const {			
 			//return true;
@@ -46,3 +45,4 @@ class MachineId {
 };
 
 #endif
+
